@@ -6,7 +6,6 @@ class App extends Component {
   
   render() {
    
-    // console.log(notes.data)
     return (
       <ConfigConsumer>
         { config => (
