@@ -1,9 +1,13 @@
 ---
 service: serverless-react-boilerplate
 
+package:
+  include:
+    - ./**
+
 provider:
   name: aws
-  runtime: nodejs8.10
+  runtime: nodejs10.x
   region: ${opt:region, 'us-east-1'}
   stage: ${opt:stage, 'dev'}
   memorySize: 512
@@ -42,11 +46,29 @@ functions:
       - http:
           path: /
           method: any
-          cors: true
+          cors:  
+            origin: '*' 
+            headers: 
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+            allowCredentials: false
       - http:
           path: /{any+}
           method: any
-          cors: true
+          cors:  
+            origin: '*' 
+            headers: 
+              - Content-Type
+              - X-Amz-Date
+              - Authorization
+              - X-Api-Key
+              - X-Amz-Security-Token
+              - X-Amz-User-Agent
+            allowCredentials: false
 
 custom:
   distBucketUrl:
@@ -76,7 +98,7 @@ custom:
 
   assets:
     # Automatically copying public folder and distribution to S3 stopped working; we do it manually now
-    auto: false
+    auto: true
     targets:
       - bucket: 
           Ref: DistBucket
@@ -95,7 +117,16 @@ custom:
 
 resources:
   Resources:
-
+    GatewayResponseDefault4XX:
+      Type: 'AWS::ApiGateway::GatewayResponse'
+      Properties:
+        ResponseParameters:
+          gatewayresponse.header.Access-Control-Allow-Origin: "'*'"
+          gatewayresponse.header.Access-Control-Allow-Headers: "'*'"
+        ResponseType: DEFAULT_4XX
+        RestApiId:
+          Ref: 'ApiGatewayRestApi'
+              
     # Customize the API Gateway resource
     ApiGatewayRestApi:
       Type: AWS::ApiGateway::RestApi

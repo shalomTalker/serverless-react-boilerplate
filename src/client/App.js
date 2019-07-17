@@ -2,9 +2,11 @@ import React, { Component } from 'react';
 import logo from './logo.svg';
 import { ConfigConsumer } from '../components/ConfigProvider';
 import './App.css';
-
 class App extends Component {
+  
   render() {
+   
+    // console.log(notes.data)
     return (
       <ConfigConsumer>
         { config => (
@@ -16,6 +18,7 @@ class App extends Component {
             <p className="App-intro">
               To get started, edit <code>src/App.js</code> and save to reload.
             </p>
+            
           </div>
         )}
       </ConfigConsumer>

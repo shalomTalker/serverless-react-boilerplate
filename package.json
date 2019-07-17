@@ -16,6 +16,7 @@
     }
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "lodash": "^4.17.11",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
@@ -50,5 +51,18 @@
     "webpack-dev-server": "^3.1.14",
     "webpack-node-externals": "^1.7.2",
     "webpack-stats-plugin": "^0.2.1"
-  }
+  },
+  "description": "[![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)\r [![dependencies](https://img.shields.io/david/arabold/serverless-react-boilerplate.svg)](https://github.com/arabold/serverless-react-boilerplate)",
+  "main": "handler.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/arabold/serverless-react-boilerplate.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/arabold/serverless-react-boilerplate/issues"
+  },
+  "homepage": "https://github.com/arabold/serverless-react-boilerplate#readme"
 }
