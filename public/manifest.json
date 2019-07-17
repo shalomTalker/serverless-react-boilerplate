@@ -1,5 +1,5 @@
 {
-  "short_name": "React App",
+  "short_name": "memory",
   "name": "Create React App Sample",
   "icons": [
     {
@@ -10,6 +10,6 @@
   ],
   "start_url": "./index.html",
   "display": "standalone",
-  "theme_color": "green",
+  "theme_color": "#000000",
   "background_color": "#ffffff"
 }

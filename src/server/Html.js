@@ -12,7 +12,6 @@ export const Html = ({ stats, content, config }) => `<!DOCTYPE html>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="${config.app.THEME_COLOR}">
     <title>${config.app.TITLE}</title>
-    <link rel="manifest" href="${config.app.PUBLIC_URL}/manifest.json">
     <link rel="shortcut icon" href="${config.app.PUBLIC_URL}/favicon.ico">
     <link rel="stylesheet" href="${config.app.DIST_URL}/${stats.css}" >
     <script>window.__CONFIG__ = ${JSON.stringify(config)}</script>

@@ -17,7 +17,9 @@
   },
   "dependencies": {
     "axios": "^0.19.0",
+    "cors": "^2.8.5",
     "lodash": "^4.17.11",
+    "middy": "^0.28.3",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "source-map-support": "^0.5.10"
